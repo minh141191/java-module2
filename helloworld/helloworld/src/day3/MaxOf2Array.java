@@ -3,7 +3,7 @@ package day3;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class MaxIn2Array {
+public class MaxOf2Array {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập độ dài cho mảng");
@@ -12,7 +12,7 @@ public class MaxIn2Array {
         int[][] arr = new int[size][size];
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
-                System.out.println("Nhập giá trị vào phần tử " + i + " " + j + " vào mảng");
+                System.out.println("Nhập giá trị của phần tử " + i + " " + j + " vào mảng");
                 arr[i][j] = scanner.nextInt();
             }
         }
