@@ -42,7 +42,7 @@ public class ProductMain {
         int editId = scanner.nextInt();
         for (int i = 0; i < productArr.length; i++) {
             if (editId == productArr[i].getId()) {
-                Product.EditProduct(productArr[editId - 1]);
+                Product.EditProduct(productArr[i]);
             }
         }
         System.out.println("Danh sách sản phẩm sau khi sửa: " + Arrays.toString(productArr));
