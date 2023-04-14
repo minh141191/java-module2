@@ -11,38 +11,42 @@ public class EmployerMain1 {
         PartTime p = new PartTime(1, "Thai", 26, 5);
         PartTime p1 = new PartTime(12, "Lam", 26, 5);
         Employee[] employees = {f, f1, p, p1};
+
         int choice;
         do {
             System.out.println("MENU");
             System.out.println("1. Hiện thị nv FullTime ");
             System.out.println("2. Hiện thị nv PartTime ");
-            System.out.println("3. Thêm nv FullTime mới ");
-            System.out.println("4. Thêm nv PartTime mới ");
+            System.out.println("3. Thêm 1 nv FT mới ");
+            System.out.println("4. Thêm 1 nv PT mới ");
             System.out.println("5. Sửa 1 nv theo ID");
             System.out.println("6. Xóa 1 nv ");
             System.out.println("Nhập lựa chọn của bạn ");
-            choice = Integer.parseInt(scanner.nextLine());
+            choice = scanner.nextInt();
 
             switch (choice) {
                 case 1:
-                    for (int i = 0; i < employees.length; i++) {
-                        if (employees[i] instanceof FullTime) {
-                            System.out.println(employees[i]);
-                        }
-                    }
+                    disPlayFullTime(employees);
+//                    for (int i = 0; i < employees.length; i++) {
+//                        if (employees[i] instanceof FullTime) {
+//                            System.out.println(employees[i]);
+//                        }
+//                    }
                     break;
                 case 2:
-                    for (int i = 0; i < employees.length; i++) {
-                        if (employees[i] instanceof PartTime) {
-                            System.out.println(employees[i]);
-                        }
-                    }
+                    disPlayPartTime(employees);
+//                    for (int i = 0; i < employees.length; i++) {
+//                        if (employees[i] instanceof PartTime) {
+//                            System.out.println(employees[i]);
+//                        }
+//                    }
+                    break;
                 case 3:
                     Employee[] newArrEmployee = new Employee[employees.length + 1];
                     for (int i = 0; i < employees.length; i++) {
                         newArrEmployee[i] = employees[i];
                     }
-                    newArrEmployee[newArrEmployee.length - 1] = FullTime.greatFullTime();
+                    newArrEmployee[newArrEmployee.length - 1] = FullTime.greatFullTime() ;
                     System.out.println(Arrays.toString(newArrEmployee));
                     break;
                 case 4:
@@ -86,5 +90,31 @@ public class EmployerMain1 {
             }
 
         } while (choice != 0);
+
+    }
+    static Employee[] disPlayFullTime(Employee[] employees) {
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i] instanceof FullTime) {
+                System.out.println(employees[i]);
+            }
+        }
+        return employees;
+    }
+
+    public static void displayEmployee(Employee[] employees) {
+        for (Employee e: employees) {
+            if (e != null) {
+                System.out.println(e);
+            }
+        }
+    }
+
+    static Employee[] disPlayPartTime(Employee[] employees) {
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i] instanceof PartTime) {
+                System.out.println(employees[i]);
+            }
+        }
+        return employees;
     }
 }

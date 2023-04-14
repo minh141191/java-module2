@@ -10,7 +10,7 @@ public class ProductMain {
         int n = scanner.nextInt();
         Product[] productArr = new Product[n];
 
-        // Duyệt và dữ liệu sản phẩm ==>
+        // Duyệt và nhập dữ liệu sản phẩm ==>
         for (int i = 0; i < n; i++) {
             productArr[i] = Product.CreatProduct();
         }

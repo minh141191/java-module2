@@ -1,9 +1,11 @@
 package day5.minitest;
 
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Product {
 //    public static final String USD = "USD";
+    private static final AtomicInteger autoId = new  AtomicInteger(1);
     private int id;
     private String name;
     private double price;
@@ -14,8 +16,8 @@ public class Product {
 
     }
 
-    public Product(int id, String name, double price, String type) {
-        this.id = id;
+    public Product(String name, double price, String type) {
+        this.id = autoId.getAndIncrement();
         this.name = name;
         this.price = price;
         this.type = type;
@@ -75,9 +77,9 @@ public class Product {
 
     // Tạo sản phẩm ==>
     public static Product CreatProduct() {
-        System.out.println("ID của sản phẩm: ");
-        int id = scanner.nextInt();
-        scanner.nextLine();
+//        System.out.println("ID của sản phẩm: ");
+//        int id = scanner.nextInt();
+//        scanner.nextLine();
         System.out.println("Tên sản phẩm: ");
         String name = scanner.nextLine();
         System.out.println("Giá sản phẩm: ");
@@ -85,7 +87,7 @@ public class Product {
         scanner.nextLine();
         System.out.println("Loại sản phẩm: ");
         String type = scanner.nextLine();
-        return new Product(id, name, price, type);
+        return new Product(name, price, type);
     }
 
     // Sửa sản phẩm ==>

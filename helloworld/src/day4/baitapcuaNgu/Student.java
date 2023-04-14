@@ -63,8 +63,9 @@ public class Student {
         return ((double) maths + physical + chemistry) / 3;
     }
 
+    static Scanner scanner = new Scanner(System.in);
     public static Student creatStudent() {
-        Scanner scanner = new Scanner(System.in);
+
         System.out.print("Nhập tên: ");
         String name = scanner.nextLine();
         System.out.println("Nhập tuổi: ");
