@@ -18,6 +18,7 @@ public class StudentMain {
             System.out.println("7. Sắp xếp danh sách theo điểm trung bình giảm dần");
             System.out.println("8. Tính tổng điểm trung bình");
             System.out.println("0. Kết thúc chương trình!!!");
+            System.out.println("Nhập lựa chọn!");
             int choice = Integer.parseInt(scanner.nextLine());
 
             switch (choice) {
