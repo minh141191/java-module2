@@ -1,7 +1,5 @@
 package day12.baitap;
 
-import day5.Student;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 

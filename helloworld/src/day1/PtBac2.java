@@ -13,6 +13,7 @@ public class PtBac2 {
         System.out.println("nhập c");
         double c = scanner.nextDouble();
         double delta = Math.pow(b, 2) - 4 * a * c;
+        double x;
         double x1;
         double x2;
         if (a != 0) {
@@ -20,12 +21,12 @@ public class PtBac2 {
                 System.out.println("Phương trình vô nghiệm");
             } else {
                 if (delta == 0) {
-                    x1 = x2 = -b / 2 * a;
-                    System.out.println("Phương trình có nghiệm kép là: " + x1);
+                    x = -b / 2 * a;
+                    System.out.println("Phương trình có nghiệm kép là: " + x);
                 } else {
                     x1 = (-b - Math.sqrt(delta)) / (2 * a);
                     x2 = (-b + Math.sqrt(delta)) / (2 * a);
-                    System.out.println("Phương trình có 2 nghiệm: x1 = " + x1 + ", x2 = " + x2);
+                    System.out.println("Phương trình có 2 nghiệm:\n x1 = " + x1 + ",\n x2 = " + x2);
                 }
             }
         }

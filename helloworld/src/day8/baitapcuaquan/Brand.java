@@ -1,7 +1,5 @@
 package day8.baitapcuaquan;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 public class Brand {
     private int id;
     private String name;

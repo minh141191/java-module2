@@ -1,9 +1,6 @@
 package day15.baicuangu;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class ArraySort {
     public static void main(String[] args) {

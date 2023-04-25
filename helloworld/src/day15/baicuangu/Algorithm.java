@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class Algorithm {
     static Scanner scanner = new Scanner(System.in);
-    public void ptBac1() throws NumberFormatException {
+
+    public void ptBac1() {
         try {
             System.out.println("Nhập a");
             double a = Double.parseDouble(scanner.nextLine());
@@ -14,7 +15,7 @@ public class Algorithm {
             if (a != 0) {
                 x = -b / a;
                 System.out.println("Phương trình có nghiệm là: " + x);
-            } else if (b != 0){
+            } else if (b != 0) {
                 System.out.println("Phương trình vô nghiệm");
             } else {
                 System.out.println("Phương trình có vô số nghiệm");
@@ -24,7 +25,7 @@ public class Algorithm {
         }
     }
 
-    public void ptBac2() throws NumberFormatException {
+    public void ptBac2(){
         try {
             System.out.println("nhập a: ");
             double a = Double.parseDouble(scanner.nextLine());
@@ -39,15 +40,13 @@ public class Algorithm {
             if (a != 0) {
                 if (delta < 0) {
                     System.out.println("Phương trình vô nghiệm");
+                } else if (delta == 0) {
+                    x = -b / 2 * a;
+                    System.out.println("Phương trình có nghiệm kép là: " + x);
                 } else {
-                    if (delta == 0) {
-                        x = -b / 2 * a;
-                        System.out.println("Phương trình có nghiệm kép là: " + x);
-                    } else {
-                        x1 = (-b - Math.sqrt(delta)) / (2 * a);
-                        x2 = (-b + Math.sqrt(delta)) / (2 * a);
-                        System.out.println("Phương trình có 2 nghiệm:\n x1 = " + x1 + ",\n x2 = " + x2);
-                    }
+                    x1 = (-b - Math.sqrt(delta)) / (2 * a);
+                    x2 = (-b + Math.sqrt(delta)) / (2 * a);
+                    System.out.println("Phương trình có 2 nghiệm:\n x1 = " + x1 + ",\n x2 = " + x2);
                 }
             } else {
                 System.out.println("Bạn nhập sai, mời nhập lại giá trị cho a (a phải khác 0) !");

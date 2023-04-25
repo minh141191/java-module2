@@ -18,6 +18,5 @@ public class DemSoLanXuatHien {
         for (Map.Entry<Integer, Integer> myMap1 : myMap.entrySet()) {
             System.out.println(myMap1.getKey() + " xuất hiện " + myMap1.getValue() + " lần");
         }
-
     }
 }

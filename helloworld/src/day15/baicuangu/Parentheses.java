@@ -23,7 +23,7 @@ public class Parentheses {
     public static void main(String[] args) {
         String parentheses1 = "()(()())()";
         String parentheses2 = "()()()(";
-        System.out.println("Chuỗi 1 trả về: " +checkParentheses(parentheses1));
+        System.out.println("Chuỗi 1 trả về: " + checkParentheses(parentheses1));
         System.out.println("Chuỗi 2 trả về: " + checkParentheses(parentheses2));
     }
 }

@@ -6,6 +6,7 @@ public class StudentManage implements Manage<Student> {
     public static List<Student> students;
     Map<Integer, String> gender;
     static Scanner scanner;
+    ClassroomManage classroomManage=new ClassroomManage();
 
     public StudentManage() {
         students = new ArrayList<>();
@@ -42,9 +43,9 @@ public class StudentManage implements Manage<Student> {
         int choice;
         System.out.println("Chọn lớp");
         choice = Integer.parseInt(scanner.nextLine());
-        for (int i = 0; i < classrooms.length; i++) {
-            if (classrooms[i].getId() == choice) {
-                return classrooms[i];
+        for (Classroom value : classrooms) {
+            if (value.getId() == choice) {
+                return value;
             }
         }
         return classroom;
@@ -134,10 +135,12 @@ public class StudentManage implements Manage<Student> {
     }
 
     public void displayStudentByClassroom() {
-        Classroom classroom = getClassroom();
-        for (int i = 0; i < students.size(); i++) {
-            if (students.get(i).getClassroom() == classroom) {
-                System.out.println(students.get(i));
+        classroomManage.displayAllClassroom();
+        System.out.println("Nhập Class");
+        int id = Integer.parseInt(scanner.nextLine());
+        for (Student student : students) {
+            if (student.getClassroom().getId() == id) {
+                System.out.println(student);
             }
         }
     }
@@ -151,8 +154,7 @@ public class StudentManage implements Manage<Student> {
             } else if (student.getAvgPoint() > 4.5) {
                 System.out.println("Xếp loại trung bình: " + student);
             } else {
-                System.out.println("Xếp loại kém: " + student);
-            }
+                System.out.println("Xếp loại kém: " + student);      }
         }
     }
 
@@ -161,9 +163,9 @@ public class StudentManage implements Manage<Student> {
         for (int i = 0; i < students.size(); i++) {
             if (students.get(i).getAvgPoint() > students.get(maxIndex).getAvgPoint()) {
                 maxIndex = i;
-                System.out.println(students.get(maxIndex));
             }
         }
+        System.out.println(students.get(maxIndex));
     }
 
     public void displayByMinAvgPoint() {
@@ -171,8 +173,8 @@ public class StudentManage implements Manage<Student> {
         for (int i = 0; i < students.size(); i++) {
             if (students.get(i).getAvgPoint() < students.get(minIndex).getAvgPoint()) {
                 minIndex = i;
-                System.out.println(students.get(minIndex));
             }
         }
+        System.out.println(students.get(minIndex));
     }
 }

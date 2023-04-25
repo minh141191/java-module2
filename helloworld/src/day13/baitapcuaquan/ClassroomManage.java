@@ -5,11 +5,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ClassroomManage {
-    List<Classroom> classrooms;
+    List<Classroom> classrooms = new ArrayList<>();
     Scanner scanner;
 
     public ClassroomManage() {
-        classrooms = new ArrayList<>();
+        classrooms.add(new Classroom(1, "C02"));
+        classrooms.add(new Classroom(2, "C03"));
+        classrooms.add(new Classroom(3, "C04"));
         scanner = new Scanner(System.in);
     }
 
